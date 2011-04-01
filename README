@@ -1,3 +1,5 @@
 A web interface for MythTV's (0.24-2) music playlists.
 Right now it just views playlists but I plan to add the ability
 to edit existing playlists and to create new playlists.
+
+License: GPLv3 or later.
