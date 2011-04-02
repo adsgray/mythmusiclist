@@ -14,7 +14,7 @@ $num = 0;
 length: <?php print count($songs); ?>
 <table id="songlist">
 
-<tr><th>Artist</th><th>Album</th><th>Song Name</th></tr>
+<tr><th>Artist</th><th>Album</th><th>Song Name</th><th></th></tr>
 
 <?php foreach ($songs as $songinfo) { ?>
 <tr <?php if ($num == 1) { print 'class="odd"'; } ?>>

@@ -90,6 +90,14 @@ tr.odd {
     background-color: #BBBBBB;
 }
 
+tr.highlight {
+    background-color: red;
+}
+
+tr.selected {
+    background-color: pink;
+}
+
 td {
     padding: 0.3em;
 }

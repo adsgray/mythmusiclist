@@ -4,13 +4,6 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 </head>
 
-<?php
-require_once("app/db.php");
-
-$db = new Musicdb();
-$playlists = $db->get_playlist_names();
-?>
-
 <body>
 <div id="wrap">
 
@@ -23,14 +16,13 @@ $playlists = $db->get_playlist_names();
 </div>
 
 <div id="leftside">
-    <ul class="skinny menu" id="playlists">
-    <?php foreach ($playlists as $plname) { ?>
-        <li class="hl"><?php print $plname; ?></li>
-    <?php } ?>
-    </ul>
+
+    <div id="playlistlist">
+    </div>
 
     <div id="status">
     </div>
+
 </div>
 
 <div id="output">
