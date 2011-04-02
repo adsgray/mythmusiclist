@@ -33,6 +33,10 @@ ul.horizbuttons > li {
       /*width: 5em;*/
 }
 
+li.button:hover {
+    background-color: red;
+}
+
 div#leftside {
     background-color: #DDDDDD;
     width: 15em;
@@ -52,8 +56,12 @@ ul.menu > li.selected {
 
 ul.menu {
     padding: 0;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
     margin: 0;
     background-color: #EEEEEE;
+    border-radius: 0.35em;
+    -moz-border-radius: 0.35em;
 }
 
 ul.menu > li {
@@ -104,5 +112,16 @@ td {
 
 td.songid {
     display: none;
+}
+
+div#dialog {
+    display: none;
+    position: absolute;
+    left: 20em;
+    top: 10em;
+    width: 30em;
+    height: 20em;
+    background-color: black;
+    color: yellow;
 }
 

@@ -8,17 +8,14 @@
 <div id="wrap">
 
 <div id="buttons">
-    <ul class="horizbuttons">
-        <li>Create New</li>
-        <li>Delete</li>
-        <li>Modify</li>
+    <ul id="menu" class="horizbuttons">
     </ul>
 </div>
 
 <div id="leftside">
 
-    <div id="playlistlist">
-    </div>
+    <ul class="skinny menu" id="playlists">
+    </ul>
 
     <div id="status">
     </div>
@@ -26,6 +23,9 @@
 </div>
 
 <div id="output">
+</div>
+
+<div id="dialog">
 </div>
 
 

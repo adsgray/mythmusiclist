@@ -27,7 +27,6 @@ var PlaylistApp = (function() {
 
                 var arr = selectedSongs[curplaylist];
                 var songid = $(this).find(".songid").html();
-                //$('div#status').html(songid);
 
                 if ($(this).hasClass('selected')) {
                     $(this).removeClass('selected');
@@ -78,6 +77,14 @@ var PlaylistApp = (function() {
                 $('ul#playlists >li').removeClass('selected');
                 $(this).addClass('selected');
 
+                /* abstract out this cacheing?
+                 * Cache, key
+                 * dest div
+                 * network source
+                 * callback funcs after dest div is populated
+                 *
+                 * use it for dialogs, too
+                 */
                 if (PLCache[playlist]) {
                     odiv.html(PLCache[playlist]);
                     $('div#status').text('from cache ' + playlist);
@@ -97,14 +104,38 @@ var PlaylistApp = (function() {
             });
     };
 
+    var setup_menu = function() {
+        $('div#buttons > ul#menu > li').click(function() {
+            //alert('test');
+            var id = $(this).attr('id');
+            var div = $('div#dialog');
+
+            if (div.is(':visible')) {
+                div.hide('slow');
+            } else {
+                div.show('slow', function() {
+                    // load php div.load(
+                    div.text('button: ' + id);
+                });
+            }
+        });
+    };
+
     var _reload_playlists = function() {
-        $('div#playlistlist').load('app/playlistlist.php', function() {
+        $('ul#playlists').load('app/playlistlist.php', function() {
             setup_playlistmenu();
+        });
+    };
+
+    var _load_basemenu = function() {
+        $('ul#menu').load('app/basemenu.php', function () {
+            setup_menu();
         });
     };
 
     $(document).ready(function() {
         _reload_playlists();
+        _load_basemenu();
     });
 
     return {
